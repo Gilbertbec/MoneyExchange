@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyExchangeWinFormApp", "MoneyExchangeWinFormApp\MoneyExchangeWinFormApp.csproj", "{02EB171C-0276-4412-BAC5-31ACC9B90211}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyExchange.BLL", "BLL\MoneyExchange.BLL.csproj", "{20564255-0531-41BD-B1EF-37140D4D32A1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03_Data", "03_Data", "{5204A595-1B59-415D-850E-3C05D3FF18FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyExchange.Data.Entities", "MoneyExchange.Data.Entities\MoneyExchange.Data.Entities.csproj", "{B863A0CA-AC2A-49F3-9120-BAEBD5CEDBB4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00_UI", "00_UI", "{E3D45C91-0A4C-406B-B239-EA7F8F84E6FE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01_BLL", "01_BLL", "{98F9E77A-F3C7-49C8-B0D4-D20904DDBCDC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02_DAL", "02_DAL", "{A09E07D6-771D-4589-B41B-AD9B5FEEC6F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyExchange.DAL", "MoneyExchange.DAL\MoneyExchange.DAL.csproj", "{EBD5312E-B3EF-417A-9231-C9D53C1D576F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{02EB171C-0276-4412-BAC5-31ACC9B90211}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02EB171C-0276-4412-BAC5-31ACC9B90211}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02EB171C-0276-4412-BAC5-31ACC9B90211}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02EB171C-0276-4412-BAC5-31ACC9B90211}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20564255-0531-41BD-B1EF-37140D4D32A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20564255-0531-41BD-B1EF-37140D4D32A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20564255-0531-41BD-B1EF-37140D4D32A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20564255-0531-41BD-B1EF-37140D4D32A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B863A0CA-AC2A-49F3-9120-BAEBD5CEDBB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B863A0CA-AC2A-49F3-9120-BAEBD5CEDBB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B863A0CA-AC2A-49F3-9120-BAEBD5CEDBB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B863A0CA-AC2A-49F3-9120-BAEBD5CEDBB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBD5312E-B3EF-417A-9231-C9D53C1D576F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBD5312E-B3EF-417A-9231-C9D53C1D576F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBD5312E-B3EF-417A-9231-C9D53C1D576F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBD5312E-B3EF-417A-9231-C9D53C1D576F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{02EB171C-0276-4412-BAC5-31ACC9B90211} = {E3D45C91-0A4C-406B-B239-EA7F8F84E6FE}
+		{20564255-0531-41BD-B1EF-37140D4D32A1} = {98F9E77A-F3C7-49C8-B0D4-D20904DDBCDC}
+		{B863A0CA-AC2A-49F3-9120-BAEBD5CEDBB4} = {5204A595-1B59-415D-850E-3C05D3FF18FB}
+		{EBD5312E-B3EF-417A-9231-C9D53C1D576F} = {A09E07D6-771D-4589-B41B-AD9B5FEEC6F5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4B0323D0-7AEB-4687-99D4-5BE6E0C31866}
+	EndGlobalSection
+EndGlobal

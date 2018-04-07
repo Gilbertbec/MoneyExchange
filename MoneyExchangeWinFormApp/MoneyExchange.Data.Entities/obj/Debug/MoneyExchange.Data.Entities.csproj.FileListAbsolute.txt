@@ -1,0 +1,7 @@
+C:\Users\Gilbert\source\repos\MoneyExchangeWinFormApp\MoneyExchange.Data.Entities\bin\Debug\MoneyExchange.Data.Entities.dll.config
+C:\Users\Gilbert\source\repos\MoneyExchangeWinFormApp\MoneyExchange.Data.Entities\bin\Debug\MoneyExchange.Data.Entities.dll
+C:\Users\Gilbert\source\repos\MoneyExchangeWinFormApp\MoneyExchange.Data.Entities\bin\Debug\MoneyExchange.Data.Entities.pdb
+C:\Users\Gilbert\source\repos\MoneyExchangeWinFormApp\MoneyExchange.Data.Entities\obj\Debug\MoneyExchange.Data.Entities.csprojResolveAssemblyReference.cache
+C:\Users\Gilbert\source\repos\MoneyExchangeWinFormApp\MoneyExchange.Data.Entities\obj\Debug\MoneyExchange.Data.Entities.csproj.CoreCompileInputs.cache
+C:\Users\Gilbert\source\repos\MoneyExchangeWinFormApp\MoneyExchange.Data.Entities\obj\Debug\MoneyExchange.Data.Entities.dll
+C:\Users\Gilbert\source\repos\MoneyExchangeWinFormApp\MoneyExchange.Data.Entities\obj\Debug\MoneyExchange.Data.Entities.pdb

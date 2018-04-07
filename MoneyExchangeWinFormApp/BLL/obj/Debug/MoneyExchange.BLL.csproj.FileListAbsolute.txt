@@ -1,0 +1,12 @@
+C:\Users\Gilbert\source\repos\MoneyExchangeWinFormApp\BLL\bin\Debug\MoneyExchange.BLL.dll
+C:\Users\Gilbert\source\repos\MoneyExchangeWinFormApp\BLL\bin\Debug\MoneyExchange.BLL.pdb
+C:\Users\Gilbert\source\repos\MoneyExchangeWinFormApp\BLL\bin\Debug\MoneyExchange.DAL.dll
+C:\Users\Gilbert\source\repos\MoneyExchangeWinFormApp\BLL\bin\Debug\MoneyExchange.Data.Entities.dll
+C:\Users\Gilbert\source\repos\MoneyExchangeWinFormApp\BLL\bin\Debug\MoneyExchange.DAL.pdb
+C:\Users\Gilbert\source\repos\MoneyExchangeWinFormApp\BLL\bin\Debug\MoneyExchange.Data.Entities.pdb
+C:\Users\Gilbert\source\repos\MoneyExchangeWinFormApp\BLL\bin\Debug\MoneyExchange.Data.Entities.dll.config
+C:\Users\Gilbert\source\repos\MoneyExchangeWinFormApp\BLL\obj\Debug\MoneyExchange.BLL.csprojResolveAssemblyReference.cache
+C:\Users\Gilbert\source\repos\MoneyExchangeWinFormApp\BLL\obj\Debug\MoneyExchange.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Gilbert\source\repos\MoneyExchangeWinFormApp\BLL\obj\Debug\MoneyExchange.BLL.csproj.CopyComplete
+C:\Users\Gilbert\source\repos\MoneyExchangeWinFormApp\BLL\obj\Debug\MoneyExchange.BLL.dll
+C:\Users\Gilbert\source\repos\MoneyExchangeWinFormApp\BLL\obj\Debug\MoneyExchange.BLL.pdb

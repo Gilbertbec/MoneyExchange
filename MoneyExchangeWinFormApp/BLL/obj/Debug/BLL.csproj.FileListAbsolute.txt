@@ -1,0 +1,11 @@
+C:\Users\Gilbert\source\repos\MoneyExchangeWinFormApp\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\Gilbert\source\repos\MoneyExchangeWinFormApp\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\Gilbert\source\repos\MoneyExchangeWinFormApp\BLL\bin\Debug\BLL.dll
+C:\Users\Gilbert\source\repos\MoneyExchangeWinFormApp\BLL\bin\Debug\BLL.pdb
+C:\Users\Gilbert\source\repos\MoneyExchangeWinFormApp\BLL\bin\Debug\MoneyExchange.DAL.dll
+C:\Users\Gilbert\source\repos\MoneyExchangeWinFormApp\BLL\bin\Debug\MoneyExchange.Data.Entities.dll
+C:\Users\Gilbert\source\repos\MoneyExchangeWinFormApp\BLL\bin\Debug\MoneyExchange.DAL.pdb
+C:\Users\Gilbert\source\repos\MoneyExchangeWinFormApp\BLL\bin\Debug\MoneyExchange.Data.Entities.pdb
+C:\Users\Gilbert\source\repos\MoneyExchangeWinFormApp\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\Gilbert\source\repos\MoneyExchangeWinFormApp\BLL\obj\Debug\BLL.dll
+C:\Users\Gilbert\source\repos\MoneyExchangeWinFormApp\BLL\obj\Debug\BLL.pdb
