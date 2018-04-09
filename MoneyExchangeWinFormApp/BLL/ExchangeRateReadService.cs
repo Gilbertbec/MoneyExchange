@@ -3,10 +3,36 @@
     using MoneyExchange.DAL;
     using MoneyExchange.Data.Entities;
     using System.Collections.Generic;
+    using HelpLibrary;
+    using System.Windows.Forms;
 
     public class ExchangeRateReadService
     {
         List<ExchangeRate> ExchangeRateList;
+        string s = string.Empty;
+
+        public List<ExchangeRate> GetExchangeRateFromFile()
+        {
+            string conditionString = GlobalConfig.fileType.ToString();
+            List<ExchangeRate> exchangeRateList = ReflactorHelper.InvokeMethodValueByAttributeNameForExchangeRateList("ExchangeRateReadService.GetExchangeRateFromFile", conditionString, "MoneyExchange.BLL.ExchangeRateReadService", "MoneyExchange.BLL");
+            return exchangeRateList;
+        }
+
+        [Condition("ExchangeRateReadService.GetExchangeRateFromFile", "Text")]
+        public List<ExchangeRate> GetExchangeRateFromTextFile()
+        {
+            IExchangeRateReader txtFileReader = new ExchangeRateTextFileReader();
+            ExchangeRateList = txtFileReader.ReadFromFile(GlobalConfig.textFilePath);
+            return ExchangeRateList;
+        }
+
+        [Condition("ExchangeRateReadService.GetExchangeRateFromFile", "Xml")]
+        public List<ExchangeRate> GetExchangeRateFromXmlFile()
+        {
+            IExchangeRateReader txtFileReader = new ExchangeRateXmlReader();
+            ExchangeRateList = txtFileReader.ReadFromFile(GlobalConfig.xmlFilePath);
+            return ExchangeRateList;
+        }
 
         public List<ExchangeRate> GetExchangeRateFromFile(FileType fileType)
         {
@@ -33,7 +59,7 @@
                     ExchangeRateList = txtFileReader.ReadFromFile(filePath);
                     break;
                 case FileType.Xml:
-                    IExchangeRateReader XmlReader = new DAL.ExchangeRateXmlReader();
+                    IExchangeRateReader XmlReader = new ExchangeRateXmlReader();
                     ExchangeRateList = XmlReader.ReadFromFile(filePath);
                     break;
             }

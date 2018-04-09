@@ -12,12 +12,15 @@ namespace MoneyExchange.Data.Entities
 	{
         public static string textFilePath = Environment.CurrentDirectory + ConfigurationManager.AppSettings["textFilePath"];
         public static string xmlFilePath = Environment.CurrentDirectory + ConfigurationManager.AppSettings["xmlFilePath"];
-        public static FileType fileType = FileType.Xml;
-        //public static string s =  ConfigurationManager.AppSettings["FileType"];
-        //System.Windows.Forms.MessageBox.Show("s");
-        //public static int i = Convert.ToInt32(s);
-        //public static FileType ft = (FileType)i;
-        //public static FileType fileType = ft;
-        //public static FileType fileType = (FileType)Convert.ToInt32(ConfigurationManager.AppSettings["FileType"]);
+        public static string s = ConfigurationManager.AppSettings["FileType"];
+        public static FileType fileType = (FileType)Enum.Parse(typeof(FileType), s);
+
+        public GlobalConfig()
+        {
+            textFilePath = Environment.CurrentDirectory + ConfigurationManager.AppSettings["textFilePath"];
+            xmlFilePath = Environment.CurrentDirectory + ConfigurationManager.AppSettings["xmlFilePath"];
+            s = ConfigurationManager.AppSettings["FileType"];
+            fileType = (FileType)Enum.Parse(typeof(FileType), s);
+        }
     }
 }

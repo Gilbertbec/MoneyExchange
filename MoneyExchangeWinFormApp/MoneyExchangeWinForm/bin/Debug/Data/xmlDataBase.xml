@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Currencies>
+  <Currency CountryName="China">
+    <CurrencyName>RMB</CurrencyName>
+    <Value>5.1</Value>
+  </Currency>
+  <Currency CountryName="Canada">
+    <CurrencyName>Canadian Dollar</CurrencyName>
+    <Value>1.1</Value>
+  </Currency>
+  <Currency CountryName="USA">
+    <CurrencyName>USA Dollar</CurrencyName>
+    <Value>1</Value>
+  </Currency>
+  <Currency CountryName="Japan">
+    <CurrencyName>Japan Yuan</CurrencyName>
+    <Value>0.001</Value>
+  </Currency>
+  <Currency CountryName="Xml">
+    <CurrencyName>Xml</CurrencyName>
+    <Value>5</Value>
+  </Currency>
+  <Currency CountryName="8">
+    <CurrencyName>8</CurrencyName>
+    <Value>8</Value>
+  </Currency>
+  <Currency CountryName="9">
+    <CurrencyName>9</CurrencyName>
+    <Value>9</Value>
+  </Currency>
+</Currencies>

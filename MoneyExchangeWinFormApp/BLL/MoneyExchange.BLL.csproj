@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,6 +46,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HelpLibrary\HelpLibrary.csproj">
+      <Project>{ee2f63ff-a6fd-401a-b5e9-95611cbd5e52}</Project>
+      <Name>HelpLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MoneyExchange.DAL\MoneyExchange.DAL.csproj">
       <Project>{ebd5312e-b3ef-417a-9231-c9d53c1d576f}</Project>
       <Name>MoneyExchange.DAL</Name>

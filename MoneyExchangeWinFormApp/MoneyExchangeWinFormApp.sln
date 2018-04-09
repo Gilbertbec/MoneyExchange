@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyExchangeWinFormApp", "MoneyExchangeWinFormApp\MoneyExchangeWinFormApp.csproj", "{02EB171C-0276-4412-BAC5-31ACC9B90211}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyExchange.BLL", "BLL\MoneyExchange.BLL.csproj", "{20564255-0531-41BD-B1EF-37140D4D32A1}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03_Data", "03_Data", "{5204A595-1B59-415D-850E-3C05D3FF18FB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04_Data", "04_Data", "{5204A595-1B59-415D-850E-3C05D3FF18FB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyExchange.Data.Entities", "MoneyExchange.Data.Entities\MoneyExchange.Data.Entities.csproj", "{B863A0CA-AC2A-49F3-9120-BAEBD5CEDBB4}"
 EndProject
@@ -19,16 +17,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02_DAL", "02_DAL", "{A09E07
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyExchange.DAL", "MoneyExchange.DAL\MoneyExchange.DAL.csproj", "{EBD5312E-B3EF-417A-9231-C9D53C1D576F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03_HelpLibrary", "03_HelpLibrary", "{17A04BAD-3AF7-4459-9FC7-8611DF0DBD27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpLibrary", "HelpLibrary\HelpLibrary.csproj", "{EE2F63FF-A6FD-401A-B5E9-95611CBD5E52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyExchangeWinForm", "MoneyExchangeWinForm\MoneyExchangeWinForm.csproj", "{B410FC66-32F8-4568-898C-F0F6504F4365}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{02EB171C-0276-4412-BAC5-31ACC9B90211}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{02EB171C-0276-4412-BAC5-31ACC9B90211}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{02EB171C-0276-4412-BAC5-31ACC9B90211}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{02EB171C-0276-4412-BAC5-31ACC9B90211}.Release|Any CPU.Build.0 = Release|Any CPU
 		{20564255-0531-41BD-B1EF-37140D4D32A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{20564255-0531-41BD-B1EF-37140D4D32A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20564255-0531-41BD-B1EF-37140D4D32A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -41,15 +41,24 @@ Global
 		{EBD5312E-B3EF-417A-9231-C9D53C1D576F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBD5312E-B3EF-417A-9231-C9D53C1D576F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBD5312E-B3EF-417A-9231-C9D53C1D576F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE2F63FF-A6FD-401A-B5E9-95611CBD5E52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE2F63FF-A6FD-401A-B5E9-95611CBD5E52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE2F63FF-A6FD-401A-B5E9-95611CBD5E52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE2F63FF-A6FD-401A-B5E9-95611CBD5E52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B410FC66-32F8-4568-898C-F0F6504F4365}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B410FC66-32F8-4568-898C-F0F6504F4365}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B410FC66-32F8-4568-898C-F0F6504F4365}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B410FC66-32F8-4568-898C-F0F6504F4365}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{02EB171C-0276-4412-BAC5-31ACC9B90211} = {E3D45C91-0A4C-406B-B239-EA7F8F84E6FE}
 		{20564255-0531-41BD-B1EF-37140D4D32A1} = {98F9E77A-F3C7-49C8-B0D4-D20904DDBCDC}
 		{B863A0CA-AC2A-49F3-9120-BAEBD5CEDBB4} = {5204A595-1B59-415D-850E-3C05D3FF18FB}
 		{EBD5312E-B3EF-417A-9231-C9D53C1D576F} = {A09E07D6-771D-4589-B41B-AD9B5FEEC6F5}
+		{EE2F63FF-A6FD-401A-B5E9-95611CBD5E52} = {17A04BAD-3AF7-4459-9FC7-8611DF0DBD27}
+		{B410FC66-32F8-4568-898C-F0F6504F4365} = {E3D45C91-0A4C-406B-B239-EA7F8F84E6FE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B0323D0-7AEB-4687-99D4-5BE6E0C31866}
