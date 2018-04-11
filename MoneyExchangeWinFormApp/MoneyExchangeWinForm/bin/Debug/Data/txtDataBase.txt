@@ -1,2 +1,8 @@
-3,1,2
-6,4,5
+China2,RMB2,5.1
+Canada,Canadian Dollar,1.1
+USA,USA Dollar,1
+Japan,Japan Yuan,0.001
+Xml,Xml,5
+Xml3,Xml3,7
+9,9,9
+10,10,10

@@ -62,7 +62,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(193, 359);
+            this.btnSave.Location = new System.Drawing.Point(224, 364);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(94, 39);
             this.btnSave.TabIndex = 2;
@@ -159,7 +159,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1121, 431);
+            this.ClientSize = new System.Drawing.Size(1640, 431);
             this.Controls.Add(this.cboImplementationPlan);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblXmlFilePath);

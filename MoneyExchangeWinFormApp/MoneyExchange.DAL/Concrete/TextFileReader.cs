@@ -5,6 +5,7 @@
     using System.Collections.Generic;
     using System.IO;
     using System.Reflection;
+    using System.Windows.Forms;
 
     public class TextFileReader<T> : IReader<T> where T : R
     {
@@ -24,7 +25,8 @@
 
                         object[] parameters = new object[1];
                         parameters[0] = line;
-                        object result = assembly.CreateInstance("MoneyExchange.Data.Entities.R", true, System.Reflection.BindingFlags.Default, null, parameters, null, null);
+                        string classFullName = string.Format($"{typeof(T).Namespace.ToString()}.{typeof(T).Name}");
+                        object result = assembly.CreateInstance(classFullName, true, System.Reflection.BindingFlags.Default, null, parameters, null, null);
                         T t = (T)result;
                         list.Add(t);
                     }

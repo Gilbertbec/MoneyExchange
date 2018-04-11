@@ -16,7 +16,7 @@
         {
             frmAdmin<R> frmAdmin = new frmAdmin<R>();
             frmAdmin.MdiParent = this;
-            frmAdmin.StartPosition = FormStartPosition.CenterParent;
+            frmAdmin.StartPosition = FormStartPosition.CenterScreen;
             frmAdmin.Show();
         }
 
