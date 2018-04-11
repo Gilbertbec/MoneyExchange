@@ -4,8 +4,9 @@
     using System;
     using System.Collections.Generic;
     using System.Reflection;
+    using System.Windows.Forms;
 
-    public static class ReflactorHelper
+    public static class ReflactorHelper<T>
     {
         public static Assembly GetAssemblyByAssemblyName(string assemblyName)
         {
@@ -197,12 +198,12 @@
         //    //.Select(t => t.GetMethod(methodName, System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public));
         //    //var methodInfo = GetAssemblyByAssemblyName(assemblyName).GetTypes().Select(t => t.GetMethod(methodName, System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public));
         //    var assembly = GetAssemblyByAssemblyName(assemblyName);
-        //    var types = assembly.GetTypes();
+        //    var types = assembly.GetTypes();                         
         //    var types1 = types.Where(x => x.FullName == "HelpLibrary.ReflactorHelper");
         //    var methodInfo = types1.Select(t => t.GetMethod(methodName, System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public));
 
 
-        //    List<ExchangeRate> exchangeRateList = null;
+        //    List<ExchangeRate> exchangeRateList = null; 
         //    methodInfo.ToList().ForEach(x =>
         //    {
         //        if (x != null)
@@ -321,7 +322,7 @@
             }
         }
 
-        public static void InvokeMethodValueByAttributeNameWithParameter(string functionName, string conditionString, string className, string assemblyName, List<ExchangeRate> exchangeRateList)
+        public static void InvokeMethodValueByAttributeNameWithParameter(string functionName, string conditionString, string className, string assemblyName, ICollection<ExchangeRate> exchangeRateList)
         {
             Assembly assembly = GetAssemblyByAssemblyName(assemblyName);
             var instance = GetInstenceByClassName(className, assembly);
@@ -346,13 +347,21 @@
             }
         }
 
-        public static List<ExchangeRate> InvokeMethodValueByAttributeNameForExchangeRateList(string functionName, string conditionString, string className, string assemblyName)
+        public static ICollection<T> InvokeMethodValueByAttributeNameForExchangeRateList(string functionName, string conditionString, string className, string assemblyName)
         {
             Assembly assembly = GetAssemblyByAssemblyName(assemblyName);
+
+            var classNames = assembly.GetTypes();
+            foreach (var item in classNames)
+            {
+                MessageBox.Show(item.Name);
+            }
+
+
             var instance = GetInstenceByClassName(className, assembly);
             Type type = instance.GetType();
             MethodInfo[] methodInfo = type.GetMethods(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
-            List<ExchangeRate> exchangeRateList = null;
+            ICollection<T> collection = null;
             foreach (var method in methodInfo)
             {
                 object[] attributes = method.GetCustomAttributes(typeof(ConditionAttribute), true);
@@ -363,12 +372,12 @@
                     {
                         if (attr.FunctionName == functionName && attr.ConditionString == conditionString)
                         {
-                            exchangeRateList = type.GetMethod(method.Name, BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public).Invoke(instance, null);
+                            collection = type.GetMethod(method.Name, BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public).Invoke(instance, null);
                         }
                     }
                 }
             }
-            return exchangeRateList;
+            return collection;
         }
     }
 }

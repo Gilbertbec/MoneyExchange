@@ -8,12 +8,12 @@ using MoneyExchange.Data.Entities;
 
 namespace MoneyExchange.DAL
 {
-    public class ExchangeRateXmlWriter : IExchangeRateWriter
+    public class XmlWriter<T>: IWriter<T> where T : R
     {
-        public void WriteToFile(List<ExchangeRate> exchangeRateList, string filePath)
+        public void WriteToFile(ICollection<T> collection, string filePath)
         {
             XElement xml = new XElement("Currencies",
-                        from er in exchangeRateList
+                        from er in collection
                         select new XElement("Currency",
                             new XAttribute("CountryName", er.CountryName),
                             new XElement("CurrencyName", er.CurrencyName),

@@ -7,3 +7,12 @@ C:\Users\Gilbert\source\repos\MoneyExchangeWinFormApp\MoneyExchange.DAL\obj\Debu
 C:\Users\Gilbert\source\repos\MoneyExchangeWinFormApp\MoneyExchange.DAL\obj\Debug\MoneyExchange.DAL.csproj.CopyComplete
 C:\Users\Gilbert\source\repos\MoneyExchangeWinFormApp\MoneyExchange.DAL\obj\Debug\MoneyExchange.DAL.dll
 C:\Users\Gilbert\source\repos\MoneyExchangeWinFormApp\MoneyExchange.DAL\obj\Debug\MoneyExchange.DAL.pdb
+C:\Users\Gilbert\Documents\GitHub\MoneyExchange\MoneyExchangeWinFormApp\MoneyExchange.DAL\bin\Debug\MoneyExchange.DAL.dll
+C:\Users\Gilbert\Documents\GitHub\MoneyExchange\MoneyExchangeWinFormApp\MoneyExchange.DAL\bin\Debug\MoneyExchange.DAL.pdb
+C:\Users\Gilbert\Documents\GitHub\MoneyExchange\MoneyExchangeWinFormApp\MoneyExchange.DAL\bin\Debug\MoneyExchange.Data.Entities.dll
+C:\Users\Gilbert\Documents\GitHub\MoneyExchange\MoneyExchangeWinFormApp\MoneyExchange.DAL\bin\Debug\MoneyExchange.Data.Entities.pdb
+C:\Users\Gilbert\Documents\GitHub\MoneyExchange\MoneyExchangeWinFormApp\MoneyExchange.DAL\obj\Debug\MoneyExchange.DAL.csprojResolveAssemblyReference.cache
+C:\Users\Gilbert\Documents\GitHub\MoneyExchange\MoneyExchangeWinFormApp\MoneyExchange.DAL\obj\Debug\MoneyExchange.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Gilbert\Documents\GitHub\MoneyExchange\MoneyExchangeWinFormApp\MoneyExchange.DAL\obj\Debug\MoneyExchange.DAL.csproj.CopyComplete
+C:\Users\Gilbert\Documents\GitHub\MoneyExchange\MoneyExchangeWinFormApp\MoneyExchange.DAL\obj\Debug\MoneyExchange.DAL.dll
+C:\Users\Gilbert\Documents\GitHub\MoneyExchange\MoneyExchangeWinFormApp\MoneyExchange.DAL\obj\Debug\MoneyExchange.DAL.pdb

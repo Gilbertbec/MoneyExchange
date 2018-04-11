@@ -1,5 +1,6 @@
-﻿namespace MoneyExchangeWinFormApp
+﻿namespace MoneyExchangeWinForm
 {
+    using MoneyExchange.Data.Entities;
     using System;
     using System.Windows.Forms;
 
@@ -13,7 +14,7 @@
 
         private void adminToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            frmAdmin frmAdmin = new frmAdmin();
+            frmAdmin<R> frmAdmin = new frmAdmin<R>();
             frmAdmin.MdiParent = this;
             frmAdmin.StartPosition = FormStartPosition.CenterParent;
             frmAdmin.Show();
@@ -21,7 +22,7 @@
 
         private void changeToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            frmChange frmChange = new frmChange();
+            frmMoneyChange frmChange = new frmMoneyChange();
             frmChange.MdiParent = this;
             frmChange.StartPosition = FormStartPosition.CenterScreen;
             frmChange.Show();

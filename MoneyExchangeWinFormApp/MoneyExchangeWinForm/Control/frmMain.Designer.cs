@@ -1,4 +1,4 @@
-﻿namespace MoneyExchangeWinFormApp
+﻿namespace MoneyExchangeWinForm
 {
 	partial class frmMain
 	{

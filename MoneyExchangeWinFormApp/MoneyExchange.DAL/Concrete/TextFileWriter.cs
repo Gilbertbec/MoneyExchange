@@ -4,13 +4,13 @@
     using System.Collections.Generic;
     using System.IO;
 
-    public class ExchangeRateTextFileWriter : IExchangeRateWriter
+    public class TextFileWriter<T> : IWriter<T> where T : R
     {
-        public void WriteToFile(List<ExchangeRate> exchangeRateList, string filePath)
+        public void WriteToFile(ICollection<T> collection, string filePath)
         {
             using (StreamWriter sw = new StreamWriter(filePath))
             {
-                exchangeRateList.ForEach(x =>
+                ((List<T>)collection).ForEach(x =>
                 {
                     string line = string.Format($"{x.CountryName},{x.CurrencyName},{x.Value}");
                     sw.WriteLine(line);

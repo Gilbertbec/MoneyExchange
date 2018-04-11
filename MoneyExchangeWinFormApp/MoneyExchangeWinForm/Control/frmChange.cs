@@ -1,23 +1,19 @@
-﻿namespace MoneyExchangeWinFormApp
+﻿namespace MoneyExchangeWinForm
 {
     using HelpLibrary;
     using MoneyExchange.BLL;
     using MoneyExchange.Data.Entities;
+    using MoneyExchangeWinForm.Model;
     using System;
     using System.Collections.Generic;
     using System.Windows.Forms;
+    using static MoneyExchangeWinForm.Model.MoneyChangeModel;
 
-    public partial class frmChange : Form
+    public partial class frmMoneyChange : Form
     {
-        string Currency;
+        MoneyChangeModel McModel = new MoneyChangeModel();
 
-        decimal CurrencyRate;
-
-        decimal ReverseCurrencyRate;
-
-        List<ExchangeRate> ExchangeRateList;
-
-        public frmChange()
+        public frmMoneyChange()
         {
             InitializeComponent();
         }
@@ -25,8 +21,8 @@
         //ExchangeRateReadService exchangeRateReadService { get; set; }
         private void frmChange_Load(object sender, EventArgs e)
         {
-            ExchangeRateReadService exchangeRateReadService = new ExchangeRateReadService();
-            ExchangeRateList = exchangeRateReadService.GetExchangeRateFromFile(GlobalConfig.fileType);
+            TReadService<R> exchangeRateReadService = new TReadService<R>();
+            McModel.ExchangeRateList = exchangeRateReadService.GetExchangeRateFromFile(GlobalConfig.fileType);
 
             BindcboSelectCurrency();
             rdoToDollar.Checked = true;
@@ -48,18 +44,15 @@
                 return;
             }
 
-            decimal amount = Convert.ToDecimal(txtAmount.Text.Trim());
+            McModel.Amount = Convert.ToDecimal(txtAmount.Text.Trim());
 
-            decimal result;
             if (rdoFromDollar.Checked)
             {
-                result = amount * CurrencyRate;
-                lblResult.Text = string.Format($"{amount} US Dollar = {result} {Currency}(s)");
+                lblResult.Text = string.Format($"{McModel.Amount} US Dollar = {McModel.GetResult()} {McModel.Currency}(s)");
             }
             else if (rdoToDollar.Checked)
             {
-                result = amount * ReverseCurrencyRate;
-                lblResult.Text = string.Format($"{amount} {Currency} = {result} US Dollar(s)");
+                lblResult.Text = string.Format($"{McModel.Amount} {McModel.Currency} = {McModel.GetReverseResult()} US Dollar(s)");
             }
         }
 
@@ -68,13 +61,11 @@
             var comboBox = ((ComboBox)sender);
             if (comboBox.SelectedIndex == 0)
             { return; }
-            Currency = comboBox.Text;
-            CurrencyRate = Convert.ToDecimal(comboBox.SelectedValue);
-            lblFromDollar.Text = string.Format($"1 US Dollar = {CurrencyRate} {Currency}(s)");
 
-            decimal decimalValue = Convert.ToDecimal(CurrencyRate);
-            ReverseCurrencyRate = Math.Round(1 / decimalValue, 4);
-            lblToDollar.Text = string.Format($"1 {Currency} = {ReverseCurrencyRate} US Dollar(s)");
+            McModel.Currency = comboBox.Text;
+            McModel.CurrencyRate = Convert.ToDecimal(comboBox.SelectedValue);
+            lblFromDollar.Text = string.Format($"1 US Dollar = {McModel.CurrencyRate} {McModel.Currency}(s)");
+            lblToDollar.Text = string.Format($"1 {McModel.Currency} = {McModel.ReverseCurrencyRate} US Dollar(s)");
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -95,11 +86,11 @@
 
         void BindcboSelectCurrency()
         {
-            if (ExchangeRateList == null)
+            if (McModel.ExchangeRateList == null)
             { return; }
 
-            ExchangeRateList.Insert(0, new ExchangeRate(",Select a Currency..,1"));
-            cboSelectCurrency.DataSource = ExchangeRateList;
+            ((List<R>)McModel.ExchangeRateList).Insert(0, new R(",Select a Currency..,1"));
+            cboSelectCurrency.DataSource = McModel.ExchangeRateList;
             cboSelectCurrency.DisplayMember = "CurrencyName";
             cboSelectCurrency.ValueMember = "Value";
         }

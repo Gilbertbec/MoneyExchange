@@ -9,7 +9,15 @@
         {
         }
 
-        public ExchangeRate(string formatedstrExchangeRate)//the fomatedStr should like [CountryName],[CurrencyName],[Value],
+        public ExchangeRate(string formatedstrExchangeRate)//the fomatedStr should like [CountryName],[CurrencyName],[Value]
+        {
+            var exchangeRateByArray = formatedstrExchangeRate.Split(',');
+            CountryName = exchangeRateByArray[0];
+            CurrencyName = exchangeRateByArray[1];
+            Value = Convert.ToDecimal(exchangeRateByArray[2]);
+        }
+
+        public void initialize(string formatedstrExchangeRate)
         {
             var exchangeRateByArray = formatedstrExchangeRate.Split(',');
             CountryName = exchangeRateByArray[0];

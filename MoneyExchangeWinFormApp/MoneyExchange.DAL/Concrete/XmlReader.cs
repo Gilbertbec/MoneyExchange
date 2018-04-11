@@ -6,21 +6,21 @@
     using System.Linq;
     using System.Xml.Linq;
 
-    public class ExchangeRateXmlReader : IExchangeRateReader
+    public class XmlReader<T> : IReader<T> where T : R, new()
     {
-        List<ExchangeRate> exchangeRates;
+        List<T> List;
 
-        public List<ExchangeRate> ReadFromFile(string filePath)
+        public ICollection<T> ReadFromFile(string filePath)
         {
             XDocument doc = XDocument.Load(filePath);
             var query = from xElement in doc.Descendants("Currency")
-                        select new ExchangeRate
+                        select new T
                         {
                             CountryName = xElement.Attribute("CountryName").Value,
                             CurrencyName = xElement.Element("CurrencyName").Value,
                             Value = Convert.ToDecimal(xElement.Element("Value").Value)
                         };
-            return exchangeRates = query.ToList();
+            return List = query.ToList();
         }
     }
 }

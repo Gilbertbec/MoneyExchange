@@ -70,6 +70,9 @@
     <Compile Include="Control\frmSystemSettings.Designer.cs">
       <DependentUpon>frmSystemSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Abstract\IObjectManageStateMachine.cs" />
+    <Compile Include="Model\Concrete\ExchangeRateManageStateMachine.cs" />
+    <Compile Include="Model\frmChangeModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Control\frmAdmin.resx">
@@ -109,7 +112,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Model\" />
     <Folder Include="View\" />
   </ItemGroup>
   <ItemGroup>

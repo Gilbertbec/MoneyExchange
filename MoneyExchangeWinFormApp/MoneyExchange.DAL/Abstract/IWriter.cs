@@ -3,8 +3,8 @@
     using MoneyExchange.Data.Entities;
     using System.Collections.Generic;
 
-    public interface IExchangeRateWriter
+    public interface IWriter<T> where T : R
     {
-        void WriteToFile(List<ExchangeRate> exchangeRateList, string filePath);
+        void WriteToFile(ICollection<T> collection, string filePath);
     }
 }

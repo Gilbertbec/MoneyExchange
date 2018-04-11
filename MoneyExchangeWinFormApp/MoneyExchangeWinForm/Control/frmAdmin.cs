@@ -1,20 +1,14 @@
-﻿namespace MoneyExchangeWinFormApp
+﻿namespace MoneyExchangeWinForm
 {
     using HelpLibrary;
     using MoneyExchange.BLL;
     using MoneyExchange.Data.Entities;
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
     using System.Windows.Forms;
 
-    public partial class frmAdmin : Form
+    public partial class frmAdmin<T> : Form where T : R, new()
     {
-        int CurrentIndex = 0;
-
-        State CurrentState;
-
-        List<ExchangeRate> ExchangeRateList;
+        IObjectsManageStateMachine<T> Sm = new ObjectsManageStateMachine<T>();
 
         public frmAdmin()
         {
@@ -23,8 +17,9 @@
 
         private void frmAdmin_Load(object sender, EventArgs e)
         {
-            ExchangeRateReadService exchangeRateReadService = new ExchangeRateReadService();
-            ExchangeRateList = exchangeRateReadService.GetExchangeRateFromFile();
+            TReadService<T> exchangeRateReadService = new TReadService<T>();
+            Sm.Collection = exchangeRateReadService.GetExchangeRateFromFile();
+
             UpdateState(State.Loaded);
             lblPosition.Text = string.Empty;
         }
@@ -32,92 +27,70 @@
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Reset();
-            CurrentIndex = ExchangeRateList.Count;
-            lblPosition.Text = string.Format($"Current index is {CurrentIndex}");
+            Sm.CurrentIndex = Sm.CollectionCount;
+            lblPosition.Text = string.Format($"Current index is {Sm.CurrentIndex}");
             UpdateState(State.Adding);
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            ExchangeRate exchangeRate = GetExchangeRateFromUI();
-            if (exchangeRate == null)
+            T t = GetExchangeRateFromUI();
+            if (t == null)
             { return; }
 
-            if (CurrentState == State.Adding)
-            {
-                ExchangeRateList.Add(exchangeRate);
-            }
-            else if (CurrentState == State.Editing)
-            {
-                ExchangeRateList[CurrentIndex] = exchangeRate;
-            }
-            CurrentIndex = ExchangeRateList.Count - 1;
-            DisplayToUIAndUpdateState(ExchangeRateList[CurrentIndex], State.Saved);
+            Sm.Save(t);
+            DisplayToUIAndUpdateState(Sm.CurrentInstance, State.Saved);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (ExchangeRateList.IsNullOrEmpty())
+            if (Sm.Collection.IsNullOrEmpty())
             { return; }
 
-            ExchangeRateList.RemoveAt(CurrentIndex);
+            Sm.Delete(Sm.CurrentIndex);
+
             Reset();
-
-            CurrentIndex = CurrentIndex > 0 ? CurrentIndex -= 1 : CurrentIndex;
-
             UpdateState(State.Deleted);
-
-            if (ExchangeRateList.IsNullOrEmpty())
-            { return; }
-            DisplayToUI(ExchangeRateList[CurrentIndex]);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (ExchangeRateList.IsNullOrEmpty())
+            if (Sm.Collection.IsNullOrEmpty())
             { return; }
-            DisplayToUIAndUpdateState(ExchangeRateList[CurrentIndex], State.Editing);
+
+            DisplayToUIAndUpdateState(Sm.CurrentInstance, State.Editing);
         }
 
         private void btnFirst_Click(object sender, EventArgs e)
         {
-            if (ExchangeRateList.IsNullOrEmpty())
+            if (Sm.Collection.IsNullOrEmpty())
             { return; }
-            CurrentIndex = 0;
-            DisplayToUIAndUpdateState(ExchangeRateList[CurrentIndex], State.Browsing);
+
+            DisplayToUIAndUpdateState(Sm.GetFirst(), Sm.CurrentState);
         }
 
         private void btnLast_Click(object sender, EventArgs e)
         {
-            if (ExchangeRateList.IsNullOrEmpty())
+            if (Sm.Collection.IsNullOrEmpty())
             { return; }
-            CurrentIndex = ExchangeRateList.Count() - 1;
-            DisplayToUIAndUpdateState(ExchangeRateList[CurrentIndex], State.Browsing);
+
+            DisplayToUIAndUpdateState(Sm.GetLast(), State.Browsing);
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-            if (ExchangeRateList.IsNullOrEmpty())
+            if (Sm.Collection.IsNullOrEmpty())
             { return; }
-            CurrentIndex = CurrentIndex >= 1 ? CurrentIndex -= 1 : CurrentIndex;
-            DisplayToUIAndUpdateState(ExchangeRateList[CurrentIndex], State.Browsing);
+
+            DisplayToUIAndUpdateState(Sm.GetPrevious(), State.Browsing);
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if (ExchangeRateList.IsNullOrEmpty())
+            if (Sm.Collection.IsNullOrEmpty() || Sm.CurrentIndex == Sm.CollectionCount)//when user just clicked Add button
             { return; }
 
-            if (CurrentIndex == ExchangeRateList.Count())//when user just clicked Add button
-            {
-                return;
-            }
-
-            if (CurrentIndex <= ExchangeRateList.Count() - 2)
-            {
-                CurrentIndex += 1;
-            }
-            DisplayToUIAndUpdateState(ExchangeRateList[CurrentIndex], State.Browsing);
+            DisplayToUIAndUpdateState(Sm.GetNext(), State.Browsing);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -127,8 +100,8 @@
 
         private void frmAdmin_FormClosing(object sender, FormClosingEventArgs e)
         {
-            ExchangeRateWriteService exchangeRateWriteService = new ExchangeRateWriteService();
-            exchangeRateWriteService.WriteExchangeRateToFile(ExchangeRateList);
+            TWriteService<T> exchangeRateWriteService = new TWriteService<T>();
+            exchangeRateWriteService.WriteExchangeRateToFile(Sm.Collection);
         }
 
         private void txtValue_KeyPress(object sender, KeyPressEventArgs e)
@@ -136,14 +109,15 @@
             ValidationHelper.VilidationForDecimal(sender, e);
         }
 
-        ExchangeRate GetExchangeRateFromUI()
+        T GetExchangeRateFromUI()
         {
             if (!(txtName.IsNotEmpty() && txtValue.IsNotEmpty() && txtCountryName.IsNotEmpty()))
             { return null; }
+
             string currencyName = txtName.Text.Trim();
             decimal value = Convert.ToDecimal(txtValue.Text.Trim());
             string countryName = txtCountryName.Text.Trim();
-            ExchangeRate exchangeRate = new ExchangeRate()
+            T exchangeRate = new T()
             {
                 CountryName = countryName,
                 CurrencyName = currencyName,
@@ -152,19 +126,20 @@
             return exchangeRate;
         }
 
-        void DisplayToUI(ExchangeRate exchangeRate)
+        void DisplayToUI(T t)
         {
-            if (ExchangeRateList.IsNullOrEmpty())
+            if (Sm.Collection.IsNullOrEmpty())
             { return; }
-            txtName.Text = exchangeRate.CurrencyName;
-            txtCountryName.Text = exchangeRate.CountryName;
-            txtValue.Text = exchangeRate.Value.ToString();
-            lblPosition.Text = string.Format($"Current index is {CurrentIndex}");
+
+            txtName.Text = t.CurrencyName;
+            txtCountryName.Text = t.CountryName;
+            txtValue.Text = t.Value.ToString();
+            lblPosition.Text = string.Format($"Current index is {Sm.CurrentIndex}");
         }
 
-        void DisplayToUIAndUpdateState(ExchangeRate exchangeRate, State state)
+        void DisplayToUIAndUpdateState(T t, State state)
         {
-            DisplayToUI(exchangeRate);
+            DisplayToUI(t);
             UpdateState(state);
         }
 
@@ -183,8 +158,8 @@
 
         void UpdateState(State state)
         {
-            CurrentState = state;
-            switch (CurrentState)
+            Sm.CurrentState = state;
+            switch (Sm.CurrentState)
             {
                 case State.Adding:
                 case State.Editing:

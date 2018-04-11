@@ -3,8 +3,8 @@
     using MoneyExchange.Data.Entities;
     using System.Collections.Generic;
 
-    public interface IExchangeRateReader
+    public interface IReader<T> where T : R
     {
-        List<ExchangeRate> ReadFromFile(string filePath);
+        ICollection<T> ReadFromFile(string filePath);
     }
 }

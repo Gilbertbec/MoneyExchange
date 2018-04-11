@@ -1,6 +1,6 @@
-﻿namespace MoneyExchangeWinFormApp
+﻿namespace MoneyExchangeWinForm
 {
-    partial class frmAdmin
+    partial class frmAdmin<T>
     {
         /// <summary>
 		/// Required designer variable.

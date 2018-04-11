@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Currencies>
-  <Currency CountryName="China">
-    <CurrencyName>RMB</CurrencyName>
+  <Currency CountryName="China2">
+    <CurrencyName>RMB2</CurrencyName>
     <Value>5.1</Value>
   </Currency>
   <Currency CountryName="Canada">
@@ -20,12 +20,8 @@
     <CurrencyName>Xml</CurrencyName>
     <Value>5</Value>
   </Currency>
-  <Currency CountryName="8">
-    <CurrencyName>8</CurrencyName>
-    <Value>8</Value>
-  </Currency>
-  <Currency CountryName="9">
-    <CurrencyName>9</CurrencyName>
-    <Value>9</Value>
+  <Currency CountryName="Xml3">
+    <CurrencyName>Xml3</CurrencyName>
+    <Value>7</Value>
   </Currency>
 </Currencies>

@@ -40,8 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstract\IExchangeRateReader.cs" />
-    <Compile Include="Abstract\IExchangeRateWriter.cs" />
+    <Compile Include="Abstract\IReader.cs" />
+    <Compile Include="Abstract\IWriter.cs" />
     <Compile Include="Concrete\ExchangeRateTextFileReader.cs" />
     <Compile Include="Concrete\ExchangeRateTextFileWriter.cs" />
     <Compile Include="Concrete\ExchangeRateXmlReader.cs" />
