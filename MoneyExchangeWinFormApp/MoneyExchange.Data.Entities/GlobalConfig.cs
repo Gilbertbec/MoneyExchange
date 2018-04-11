@@ -1,26 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Configuration;
-using System.Windows.Forms;
-
-namespace MoneyExchange.Data.Entities
+﻿namespace MoneyExchange.Data.Entities
 {
-	public class GlobalConfig
-	{
-        public static string textFilePath = Environment.CurrentDirectory + ConfigurationManager.AppSettings["textFilePath"];
-        public static string xmlFilePath = Environment.CurrentDirectory + ConfigurationManager.AppSettings["xmlFilePath"];
-        public static string s = ConfigurationManager.AppSettings["FileType"];
-        public static FileType fileType = (FileType)Enum.Parse(typeof(FileType), s);
+    using System;
+    using System.Configuration;
+
+    public class GlobalConfig
+    {
+        private static string strFileType = ConfigurationManager.AppSettings["FileType"];
+
+        private static FileType fileType = (FileType)Enum.Parse(typeof(FileType), strFileType);
+
+        private static string textFilePath = Environment.CurrentDirectory + ConfigurationManager.AppSettings["textFilePath"];
+
+        private static string xmlFilePath = Environment.CurrentDirectory + ConfigurationManager.AppSettings["xmlFilePath"];
+
+        private static string strImplementationPlan = ConfigurationManager.AppSettings["ImplementationPlan"];
+
+        private static ImplementationPlan implementationPlan = (ImplementationPlan)Enum.Parse(typeof(ImplementationPlan), strImplementationPlan);
 
         public GlobalConfig()
         {
+            strFileType = ConfigurationManager.AppSettings["FileType"];
+            fileType = (FileType)Enum.Parse(typeof(FileType), strFileType);
             textFilePath = Environment.CurrentDirectory + ConfigurationManager.AppSettings["textFilePath"];
             xmlFilePath = Environment.CurrentDirectory + ConfigurationManager.AppSettings["xmlFilePath"];
-            s = ConfigurationManager.AppSettings["FileType"];
-            fileType = (FileType)Enum.Parse(typeof(FileType), s);
+            strImplementationPlan = ConfigurationManager.AppSettings["ImplementationPlan"];
+            implementationPlan = (ImplementationPlan)Enum.Parse(typeof(ImplementationPlan), strImplementationPlan);
         }
+
+        public static FileType FileType => fileType;
+
+        public static string TextFilePath => textFilePath;
+
+        public static string XmlFilePath => xmlFilePath;
+
+        public static ImplementationPlan ImplementationPlan => implementationPlan;
     }
 }

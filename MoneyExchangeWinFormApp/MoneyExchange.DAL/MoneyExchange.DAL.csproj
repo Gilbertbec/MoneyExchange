@@ -42,10 +42,10 @@
   <ItemGroup>
     <Compile Include="Abstract\IReader.cs" />
     <Compile Include="Abstract\IWriter.cs" />
-    <Compile Include="Concrete\ExchangeRateTextFileReader.cs" />
-    <Compile Include="Concrete\ExchangeRateTextFileWriter.cs" />
-    <Compile Include="Concrete\ExchangeRateXmlReader.cs" />
-    <Compile Include="Concrete\ExchangeRateXmlWriter.cs" />
+    <Compile Include="Concrete\TextFileReader.cs" />
+    <Compile Include="Concrete\TextFileWriter.cs" />
+    <Compile Include="Concrete\XmlReader.cs" />
+    <Compile Include="Concrete\XmlWriter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

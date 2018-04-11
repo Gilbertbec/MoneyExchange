@@ -9,30 +9,30 @@
         public void WriteExchangeRateToFile(ICollection<T> collection)
         {
             string filePath = string.Empty;
-            FileType fileType = GlobalConfig.fileType;
+            FileType fileType = GlobalConfig.FileType;
             switch (fileType)
             {
                 case FileType.Text:
-                    filePath = GlobalConfig.textFilePath;
+                    filePath = GlobalConfig.TextFilePath;
                     break;
                 case FileType.Xml:
-                    filePath = GlobalConfig.xmlFilePath;
+                    filePath = GlobalConfig.XmlFilePath;
                     break;
             }
             WriteExchangeRateToFile(collection, fileType, filePath);
         }
 
-        public void WriteExchangeRateToFile(ICollection<T> ExchangeRateList, FileType fileType, string filePath)
+        public void WriteExchangeRateToFile(ICollection<T> collection, FileType fileType, string filePath)
         {
             switch (fileType)
             {
                 case FileType.Text:
                     IWriter<T> textFileWriter = new TextFileWriter<T>();
-                    textFileWriter.WriteToFile(ExchangeRateList, filePath);
+                    textFileWriter.WriteToFile(collection, filePath);
                     break;
                 case FileType.Xml:
                     IWriter<T> xmlWriter = new XmlWriter<T>();
-                    xmlWriter.WriteToFile(ExchangeRateList, filePath);
+                    xmlWriter.WriteToFile(collection, filePath);
                     break;
             }
         }

@@ -1,17 +1,27 @@
-﻿namespace MoneyExchangeWinForm
+﻿namespace MoneyExchangeWinForm.Model.Concrete
 {
     using MoneyExchange.Data.Entities;
+    using System;
     using System.Collections.Generic;
+    using System.Linq;
 
-    class ObjectsManageStateMachine<T> : IObjectsManageStateMachine<T>
+    class ObjectsManageStateMachineByArray<T> : IObjectsManageStateMachine<T>
     {
         public int CurrentIndex { get; set; } = 0;
 
-        public int CollectionCount { get => Collection.Count; }
+        public int CollectionCount => Collection.Count;
 
         public State CurrentState { get; set; }
 
-        public T CurrentInstance => ((List<T>)Collection)[CurrentIndex];
+        public T CurrentInstance
+        {
+            get
+            {
+                T[] ts = new T[500];
+                Collection.CopyTo(ts, 0);
+                return ts[CurrentIndex];
+            }
+        }
 
         public ICollection<T> Collection { get; set; }
 
@@ -20,7 +30,7 @@
             if (CurrentState == State.Adding)
             {
                 Append(t);
-                CurrentIndex = CollectionCount - 1;
+                CurrentIndex = Collection.Count(x => x != null) - 1;
             }
             else if (CurrentState == State.Editing)
             {
@@ -32,20 +42,34 @@
 
         public IObjectsManageStateMachine<T> Append(T t)
         {
-            ((List<T>)Collection).Add(t);
+            T[] ts = new T[500];
+            Collection.CopyTo(ts, 0);
+            ts[CollectionCount] = t;
+
+            Collection = ts.Where(x => x != null).ToArray();
             return this;
         }
 
         public IObjectsManageStateMachine<T> Edit(int currentIndex, T t)
         {
-            ((List<T>)Collection)[CurrentIndex] = t;
+            T[] ts = new T[500];
+            Collection.CopyTo(ts, 0);
+            ts[currentIndex] = t;
+
+            Collection = ts.Where(x => x != null).ToArray();
             return this;
         }
 
         public IObjectsManageStateMachine<T> Delete(int currentIndex)
         {
-            ((List<T>)Collection).RemoveAt(CurrentIndex);
-            CurrentIndex = CurrentIndex > 0 ? CurrentIndex -= 1 : CurrentIndex;
+            T[] ts = new T[500];
+            Collection.CopyTo(ts, 0);
+            Array.Clear(ts, currentIndex, 1);
+            ts = ts.Where(x => x != null).ToArray();
+            Array.Resize(ref ts, 500);
+            Collection = ts.Where(x => x != null).ToArray();
+
+            CurrentIndex = currentIndex > 0 ? CurrentIndex -= 1 : CurrentIndex;
             return this;
         }
 
@@ -57,7 +81,7 @@
 
         public T GetLast()
         {
-            CurrentIndex = CollectionCount - 1;
+            CurrentIndex = Collection.Count(x => x != null) - 1;
             return CurrentInstance;
         }
 
@@ -69,7 +93,7 @@
 
         public T GetNext()
         {
-            if (CurrentIndex <= CollectionCount - 2)
+            if (CurrentIndex <= Collection.Count(x => x != null) - 2)
             {
                 CurrentIndex += 1;
             }

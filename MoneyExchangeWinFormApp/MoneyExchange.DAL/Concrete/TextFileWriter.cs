@@ -10,11 +10,12 @@
         {
             using (StreamWriter sw = new StreamWriter(filePath))
             {
-                ((List<T>)collection).ForEach(x =>
+                foreach (var item in collection)
                 {
+                    var x = item as R;
                     string line = string.Format($"{x.CountryName},{x.CurrencyName},{x.Value}");
                     sw.WriteLine(line);
-                });
+                }
             }
         }
     }

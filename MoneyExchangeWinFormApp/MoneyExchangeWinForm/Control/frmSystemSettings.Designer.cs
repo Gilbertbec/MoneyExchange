@@ -39,6 +39,8 @@
             this.lblTextFilePath = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lblXmlFilePath = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cboImplementationPlan = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -53,14 +55,14 @@
             // cboFileType
             // 
             this.cboFileType.FormattingEnabled = true;
-            this.cboFileType.Location = new System.Drawing.Point(193, 62);
+            this.cboFileType.Location = new System.Drawing.Point(224, 62);
             this.cboFileType.Name = "cboFileType";
             this.cboFileType.Size = new System.Drawing.Size(216, 33);
             this.cboFileType.TabIndex = 1;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(193, 317);
+            this.btnSave.Location = new System.Drawing.Point(193, 359);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(94, 39);
             this.btnSave.TabIndex = 2;
@@ -88,14 +90,14 @@
             // 
             // txtTextFilePath
             // 
-            this.txtTextFilePath.Location = new System.Drawing.Point(193, 151);
+            this.txtTextFilePath.Location = new System.Drawing.Point(224, 151);
             this.txtTextFilePath.Name = "txtTextFilePath";
             this.txtTextFilePath.Size = new System.Drawing.Size(666, 31);
             this.txtTextFilePath.TabIndex = 5;
             // 
             // txtXmlFilePath
             // 
-            this.txtXmlFilePath.Location = new System.Drawing.Point(193, 241);
+            this.txtXmlFilePath.Location = new System.Drawing.Point(224, 241);
             this.txtXmlFilePath.Name = "txtXmlFilePath";
             this.txtXmlFilePath.Size = new System.Drawing.Size(666, 31);
             this.txtXmlFilePath.TabIndex = 6;
@@ -136,11 +138,30 @@
             this.lblXmlFilePath.TabIndex = 8;
             this.lblXmlFilePath.Text = "xmlFileFullPath:";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(18, 302);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(206, 25);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "ImplementationPlan:";
+            // 
+            // cboImplementationPlan
+            // 
+            this.cboImplementationPlan.FormattingEnabled = true;
+            this.cboImplementationPlan.Location = new System.Drawing.Point(224, 294);
+            this.cboImplementationPlan.Name = "cboImplementationPlan";
+            this.cboImplementationPlan.Size = new System.Drawing.Size(666, 33);
+            this.cboImplementationPlan.TabIndex = 10;
+            // 
             // frmSystemSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1121, 431);
+            this.Controls.Add(this.cboImplementationPlan);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.lblXmlFilePath);
             this.Controls.Add(this.lblTextFilePath);
             this.Controls.Add(this.txtXmlFilePath);
@@ -173,5 +194,7 @@
         private System.Windows.Forms.Label lblTextFilePath;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblXmlFilePath;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cboImplementationPlan;
     }
 }

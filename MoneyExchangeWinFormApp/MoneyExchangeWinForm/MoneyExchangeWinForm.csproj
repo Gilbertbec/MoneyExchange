@@ -71,7 +71,8 @@
       <DependentUpon>frmSystemSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Abstract\IObjectManageStateMachine.cs" />
-    <Compile Include="Model\Concrete\ExchangeRateManageStateMachine.cs" />
+    <Compile Include="Model\Concrete\ObjectsManageStateMachineByList.cs" />
+    <Compile Include="Model\Concrete\ObjectsManageStateMachineByArray.cs" />
     <Compile Include="Model\frmChangeModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

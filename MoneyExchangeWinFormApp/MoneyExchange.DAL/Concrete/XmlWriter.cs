@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-using MoneyExchange.Data.Entities;
-
-namespace MoneyExchange.DAL
+﻿namespace MoneyExchange.DAL
 {
-    public class XmlWriter<T>: IWriter<T> where T : R
+    using MoneyExchange.Data.Entities;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Xml.Linq;
+
+    public class XmlWriter<T> : IWriter<T> where T : R
     {
         public void WriteToFile(ICollection<T> collection, string filePath)
         {

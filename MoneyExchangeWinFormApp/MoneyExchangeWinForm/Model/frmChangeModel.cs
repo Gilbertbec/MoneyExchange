@@ -1,12 +1,9 @@
-﻿using MoneyExchange.Data.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MoneyExchangeWinForm.Model
+﻿namespace MoneyExchangeWinForm.Model
 {
+    using MoneyExchange.Data.Entities;
+    using System;
+    using System.Collections.Generic;
+
     class MoneyChangeModel
     {
         public string Currency { get; set; }

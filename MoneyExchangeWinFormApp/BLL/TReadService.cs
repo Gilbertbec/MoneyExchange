@@ -13,31 +13,15 @@
         public ICollection<T> GetExchangeRateFromFile()
         {
             string path = string.Empty;
-            FileType fileType = GlobalConfig.fileType;
+            FileType fileType = GlobalConfig.FileType;
 
             switch (fileType)
             {
                 case FileType.Text:
-                    path = GlobalConfig.textFilePath;
+                    path = GlobalConfig.TextFilePath;
                     break;
                 case FileType.Xml:
-                    path = GlobalConfig.xmlFilePath;
-                    break;
-            }
-            Collection = GetExchangeRateFromFile(fileType, path);
-            return Collection;
-        }
-
-        public ICollection<T> GetExchangeRateFromFile(FileType fileType)
-        {
-            string path = string.Empty;
-            switch (fileType)
-            {
-                case FileType.Text:
-                    path = GlobalConfig.textFilePath;
-                    break;
-                case FileType.Xml:
-                    path = GlobalConfig.xmlFilePath;
+                    path = GlobalConfig.XmlFilePath;
                     break;
             }
             Collection = GetExchangeRateFromFile(fileType, path);

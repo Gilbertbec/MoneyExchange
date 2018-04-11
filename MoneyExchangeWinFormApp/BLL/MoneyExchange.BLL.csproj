@@ -41,8 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExchangeRateReadService.cs" />
-    <Compile Include="ExchangeRateWriteService.cs" />
+    <Compile Include="TReadService.cs" />
+    <Compile Include="TWriteService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

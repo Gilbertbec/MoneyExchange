@@ -1,3 +1,2 @@
-China,Chinese Yuan,5.1
-Canada,Canadian Dollar,1.1
-USA,USA Dollar,1
+3,1,2
+6,4,5

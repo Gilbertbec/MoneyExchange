@@ -17,6 +17,12 @@
             Value = Convert.ToDecimal(exchangeRateByArray[2]);
         }
 
+        public string CountryName { get; set; }
+
+        public string CurrencyName { get; set; }
+
+        public decimal Value { get; set; }
+
         public void initialize(string formatedstrExchangeRate)
         {
             var exchangeRateByArray = formatedstrExchangeRate.Split(',');
@@ -24,12 +30,6 @@
             CurrencyName = exchangeRateByArray[1];
             Value = Convert.ToDecimal(exchangeRateByArray[2]);
         }
-
-        public string CountryName { get; set; }
-
-        public string CurrencyName { get; set; }
-
-        public decimal Value { get; set; }
 
         public override string ToString()
         {

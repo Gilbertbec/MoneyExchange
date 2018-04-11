@@ -3,20 +3,39 @@
     using HelpLibrary;
     using MoneyExchange.BLL;
     using MoneyExchange.Data.Entities;
+    using MoneyExchangeWinForm.Model.Concrete;
     using System;
     using System.Windows.Forms;
 
     public partial class frmAdmin<T> : Form where T : R, new()
     {
-        IObjectsManageStateMachine<T> Sm = new ObjectsManageStateMachine<T>();
+        IObjectsManageStateMachine<T> Sm;
 
         public frmAdmin()
         {
             InitializeComponent();
         }
 
+        public void LoadSm()
+        {
+            string className = string.Empty;
+            Type type = null;
+            switch (GlobalConfig.ImplementationPlan)
+            {
+                case ImplementationPlan.ImplementationPlanByArray:
+                    type = typeof(ObjectsManageStateMachineByArray<>);
+                    break;
+                case ImplementationPlan.ImplementationPlanByList:
+                    type = typeof(ObjectsManageStateMachineByList<>);
+                    break;
+            }
+            type = type.MakeGenericType(new Type[] { typeof(T) });
+            Sm = (IObjectsManageStateMachine<T>)Activator.CreateInstance(type);
+        }
+
         private void frmAdmin_Load(object sender, EventArgs e)
         {
+            LoadSm();
             TReadService<T> exchangeRateReadService = new TReadService<T>();
             Sm.Collection = exchangeRateReadService.GetExchangeRateFromFile();
 

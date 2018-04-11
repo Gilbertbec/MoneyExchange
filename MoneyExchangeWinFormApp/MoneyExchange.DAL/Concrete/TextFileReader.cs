@@ -24,7 +24,7 @@
 
                         object[] parameters = new object[1];
                         parameters[0] = line;
-                        object result = assembly.CreateInstance("MoneyExchange.Data.Entities.ExchangeRate", true, System.Reflection.BindingFlags.Default, null, parameters, null, null);
+                        object result = assembly.CreateInstance("MoneyExchange.Data.Entities.R", true, System.Reflection.BindingFlags.Default, null, parameters, null, null);
                         T t = (T)result;
                         list.Add(t);
                     }

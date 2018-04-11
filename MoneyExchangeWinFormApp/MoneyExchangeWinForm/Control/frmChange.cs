@@ -7,7 +7,6 @@
     using System;
     using System.Collections.Generic;
     using System.Windows.Forms;
-    using static MoneyExchangeWinForm.Model.MoneyChangeModel;
 
     public partial class frmMoneyChange : Form
     {
@@ -22,7 +21,7 @@
         private void frmChange_Load(object sender, EventArgs e)
         {
             TReadService<R> exchangeRateReadService = new TReadService<R>();
-            McModel.ExchangeRateList = exchangeRateReadService.GetExchangeRateFromFile(GlobalConfig.fileType);
+            McModel.ExchangeRateList = exchangeRateReadService.GetExchangeRateFromFile();
 
             BindcboSelectCurrency();
             rdoToDollar.Checked = true;

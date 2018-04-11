@@ -6,7 +6,7 @@
     using System.Reflection;
     using System.Windows.Forms;
 
-    public static class ReflactorHelper<T>
+    public static class ReflactorHelper
     {
         public static Assembly GetAssemblyByAssemblyName(string assemblyName)
         {
@@ -347,37 +347,37 @@
             }
         }
 
-        public static ICollection<T> InvokeMethodValueByAttributeNameForExchangeRateList(string functionName, string conditionString, string className, string assemblyName)
-        {
-            Assembly assembly = GetAssemblyByAssemblyName(assemblyName);
+        //public static ICollection<T> InvokeMethodValueByAttributeNameForExchangeRateList(string functionName, string conditionString, string className, string assemblyName)
+        //{
+        //    Assembly assembly = GetAssemblyByAssemblyName(assemblyName);
 
-            var classNames = assembly.GetTypes();
-            foreach (var item in classNames)
-            {
-                MessageBox.Show(item.Name);
-            }
+        //    var classNames = assembly.GetTypes();
+        //    foreach (var item in classNames)
+        //    {
+        //        MessageBox.Show(item.Name);
+        //    }
 
 
-            var instance = GetInstenceByClassName(className, assembly);
-            Type type = instance.GetType();
-            MethodInfo[] methodInfo = type.GetMethods(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
-            ICollection<T> collection = null;
-            foreach (var method in methodInfo)
-            {
-                object[] attributes = method.GetCustomAttributes(typeof(ConditionAttribute), true);
-                foreach (var item in attributes)
-                {
-                    ConditionAttribute attr = item as ConditionAttribute;
-                    if (null != attr)
-                    {
-                        if (attr.FunctionName == functionName && attr.ConditionString == conditionString)
-                        {
-                            collection = type.GetMethod(method.Name, BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public).Invoke(instance, null);
-                        }
-                    }
-                }
-            }
-            return collection;
-        }
+        //    var instance = GetInstenceByClassName(className, assembly);
+        //    Type type = instance.GetType();
+        //    MethodInfo[] methodInfo = type.GetMethods(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
+        //    ICollection<T> collection = null;
+        //    foreach (var method in methodInfo)
+        //    {
+        //        object[] attributes = method.GetCustomAttributes(typeof(ConditionAttribute), true);
+        //        foreach (var item in attributes)
+        //        {
+        //            ConditionAttribute attr = item as ConditionAttribute;
+        //            if (null != attr)
+        //            {
+        //                if (attr.FunctionName == functionName && attr.ConditionString == conditionString)
+        //                {
+        //                    collection = type.GetMethod(method.Name, BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public).Invoke(instance, null);
+        //                }
+        //            }
+        //        }
+        //    }
+        //    return collection;
+        //}
     }
 }

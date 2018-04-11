@@ -24,4 +24,12 @@
     <CurrencyName>Xml3</CurrencyName>
     <Value>7</Value>
   </Currency>
+  <Currency CountryName="9">
+    <CurrencyName>9</CurrencyName>
+    <Value>9</Value>
+  </Currency>
+  <Currency CountryName="10">
+    <CurrencyName>10</CurrencyName>
+    <Value>10</Value>
+  </Currency>
 </Currencies>
