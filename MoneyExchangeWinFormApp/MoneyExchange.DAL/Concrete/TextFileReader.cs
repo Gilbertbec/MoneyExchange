@@ -5,7 +5,6 @@
     using System.Collections.Generic;
     using System.IO;
     using System.Reflection;
-    using System.Windows.Forms;
 
     public class TextFileReader<T> : IReader<T> where T : R
     {

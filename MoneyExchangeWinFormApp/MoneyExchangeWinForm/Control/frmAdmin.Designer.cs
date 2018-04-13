@@ -282,12 +282,13 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblTitle);
             this.Name = "frmAdmin";
-            this.Text = "frmAdmin";
+            this.Text = "Money Exchange";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmAdmin_FormClosing);
             this.Load += new System.EventHandler(this.frmAdmin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
     }
 }

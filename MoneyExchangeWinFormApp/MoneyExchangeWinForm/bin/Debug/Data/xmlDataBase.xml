@@ -6,7 +6,7 @@
   </Currency>
   <Currency CountryName="Canada">
     <CurrencyName>Canadian Dollar</CurrencyName>
-    <Value>1.1</Value>
+    <Value>1.3</Value>
   </Currency>
   <Currency CountryName="USA">
     <CurrencyName>USA Dollar</CurrencyName>

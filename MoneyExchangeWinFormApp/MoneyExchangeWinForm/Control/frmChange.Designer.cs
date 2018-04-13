@@ -196,7 +196,7 @@
             this.lblResult.TabIndex = 0;
             this.lblResult.Text = "lblResult";
             // 
-            // frmChange
+            // frmMoneyChange
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -211,8 +211,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cboSelectCurrency);
             this.Controls.Add(this.lblTitle);
-            this.Name = "frmChange";
-            this.Text = "Form1";
+            this.Name = "frmMoneyChange";
+            this.Text = "Money Exchange";
             this.Load += new System.EventHandler(this.frmChange_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
