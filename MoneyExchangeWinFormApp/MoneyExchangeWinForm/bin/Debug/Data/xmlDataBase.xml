@@ -32,4 +32,12 @@
     <CurrencyName>10</CurrencyName>
     <Value>10</Value>
   </Currency>
+  <Currency CountryName="1">
+    <CurrencyName>1</CurrencyName>
+    <Value>1</Value>
+  </Currency>
+  <Currency CountryName="2">
+    <CurrencyName>2</CurrencyName>
+    <Value>2</Value>
+  </Currency>
 </Currencies>

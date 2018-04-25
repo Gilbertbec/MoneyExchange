@@ -192,9 +192,8 @@
             this.lblResult.ForeColor = System.Drawing.Color.Fuchsia;
             this.lblResult.Location = new System.Drawing.Point(105, 48);
             this.lblResult.Name = "lblResult";
-            this.lblResult.Size = new System.Drawing.Size(95, 25);
+            this.lblResult.Size = new System.Drawing.Size(0, 25);
             this.lblResult.TabIndex = 0;
-            this.lblResult.Text = "lblResult";
             // 
             // frmMoneyChange
             // 

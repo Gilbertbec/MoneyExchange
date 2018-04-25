@@ -47,7 +47,7 @@
         {
             Reset();
             Sm.CurrentIndex = Sm.CollectionCount;
-            lblPosition.Text = string.Format($"Current index is {Sm.CurrentIndex}");
+            lblPosition.Text = string.Format($"The {Sm.CurrentIndex + 1} th currency");
             UpdateState(State.Adding);
         }
 
@@ -153,7 +153,7 @@
             txtName.Text = t.CurrencyName;
             txtCountryName.Text = t.CountryName;
             txtValue.Text = t.Value.ToString();
-            lblPosition.Text = string.Format($"Current index is {Sm.CurrentIndex}");
+            lblPosition.Text = string.Format($"The {Sm.CurrentIndex + 1} th currency");
         }
 
         void DisplayToUIAndUpdateState(T t, State state)

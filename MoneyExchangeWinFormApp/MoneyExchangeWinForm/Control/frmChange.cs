@@ -17,7 +17,6 @@
             InitializeComponent();
         }
 
-        //ExchangeRateReadService exchangeRateReadService { get; set; }
         private void frmChange_Load(object sender, EventArgs e)
         {
             TReadService<R> exchangeRateReadService = new TReadService<R>();
