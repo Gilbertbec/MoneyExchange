@@ -8,17 +8,8 @@
     {
         public void WriteExchangeRateToFile(ICollection<T> collection)
         {
-            string filePath = string.Empty;
             FileType fileType = GlobalConfig.FileType;
-            switch (fileType)
-            {
-                case FileType.Text:
-                    filePath = GlobalConfig.TextFilePath;
-                    break;
-                case FileType.Xml:
-                    filePath = GlobalConfig.XmlFilePath;
-                    break;
-            }
+            string filePath = GlobalConfig.GetFilePathByFileType(fileType);
             WriteExchangeRateToFile(collection, fileType, filePath);
         }
 
@@ -26,6 +17,7 @@
         {
             switch (fileType)
             {
+                case FileType.Csv:
                 case FileType.Text:
                     IWriter<T> textFileWriter = new TextFileWriter<T>();
                     textFileWriter.WriteToFile(collection, filePath);

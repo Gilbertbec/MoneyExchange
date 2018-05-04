@@ -35,6 +35,8 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -70,10 +72,17 @@
     <Compile Include="Control\frmSystemSettings.Designer.cs">
       <DependentUpon>frmSystemSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\frmGlobalExchange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\frmGlobalExchange.Designer.cs">
+      <DependentUpon>frmGlobalExchange.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Abstract\IObjectManageStateMachine.cs" />
     <Compile Include="Model\Concrete\ObjectsManageStateMachineByList.cs" />
     <Compile Include="Model\Concrete\ObjectsManageStateMachineByArray.cs" />
     <Compile Include="Model\frmChangeModel.cs" />
+    <Compile Include="Model\GlobalExchangeModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Control\frmAdmin.resx">
@@ -88,6 +97,9 @@
     <EmbeddedResource Include="Control\frmSystemSettings.resx">
       <DependentUpon>frmSystemSettings.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\frmGlobalExchange.resx">
+      <DependentUpon>frmGlobalExchange.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -97,6 +109,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

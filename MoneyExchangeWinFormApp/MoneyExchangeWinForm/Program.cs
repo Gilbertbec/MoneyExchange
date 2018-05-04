@@ -1,5 +1,6 @@
 ﻿namespace MoneyExchangeWinForm
 {
+    using MoneyExchange.Data.Entities;
     using System;
     using System.Windows.Forms;
 
@@ -14,6 +15,7 @@
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmMain());
+            
         }
     }
 }

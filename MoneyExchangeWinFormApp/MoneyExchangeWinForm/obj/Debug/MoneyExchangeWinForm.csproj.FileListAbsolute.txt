@@ -42,3 +42,4 @@ C:\Users\Gilbert\Documents\GitHub\MoneyExchange\MoneyExchangeWinFormApp\MoneyExc
 C:\Users\Gilbert\Documents\GitHub\MoneyExchange\MoneyExchangeWinFormApp\MoneyExchangeWinForm\obj\Debug\MoneyExchangeWinForm.frmMain.resources
 C:\Users\Gilbert\Documents\GitHub\MoneyExchange\MoneyExchangeWinFormApp\MoneyExchangeWinForm\obj\Debug\MoneyExchangeWinForm.frmSystemSettings.resources
 C:\Users\Gilbert\Documents\GitHub\MoneyExchange\MoneyExchangeWinFormApp\MoneyExchangeWinForm\obj\Debug\MoneyExchangeWinForm.frmMoneyChange.resources
+C:\Users\Gilbert\Documents\GitHub\MoneyExchange\MoneyExchangeWinFormApp\MoneyExchangeWinForm\obj\Debug\MoneyExchangeWinForm.frmGlobalExchange.resources

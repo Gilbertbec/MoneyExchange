@@ -6,6 +6,8 @@
 
     public partial class frmMain : Form
     {
+        public static R[] r = new R[500];
+
         public frmMain()
         {
             InitializeComponent();
@@ -40,6 +42,14 @@
             frmSystemSettings.MdiParent = this;
             frmSystemSettings.StartPosition = FormStartPosition.CenterScreen;
             frmSystemSettings.Show();
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            frmGlobalExchange frmGlobalExchange = new frmGlobalExchange();
+            frmGlobalExchange.MdiParent = this;
+            frmGlobalExchange.StartPosition = FormStartPosition.CenterScreen;
+            frmGlobalExchange.Show();
         }
     }
 }

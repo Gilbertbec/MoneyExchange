@@ -12,18 +12,8 @@
 
         public ICollection<T> GetExchangeRateFromFile()
         {
-            string path = string.Empty;
             FileType fileType = GlobalConfig.FileType;
-
-            switch (fileType)
-            {
-                case FileType.Text:
-                    path = GlobalConfig.TextFilePath;
-                    break;
-                case FileType.Xml:
-                    path = GlobalConfig.XmlFilePath;
-                    break;
-            }
+            string path = GlobalConfig.GetFilePathByFileType(fileType);
             Collection = GetExchangeRateFromFile(fileType, path);
             return Collection;
         }
@@ -32,6 +22,7 @@
         {
             switch (fileType)
             {
+                case FileType.Csv:
                 case FileType.Text:
                     IReader<T> txtFileReader = new TextFileReader<T>();
                     Collection = txtFileReader.ReadFromFile(filePath);

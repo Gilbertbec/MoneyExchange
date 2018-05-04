@@ -13,6 +13,8 @@
 
         private static string xmlFilePath = Environment.CurrentDirectory + ConfigurationManager.AppSettings["xmlFilePath"];
 
+        private static string csvFilePath = Environment.CurrentDirectory + ConfigurationManager.AppSettings["csvFilePath"];
+
         private static string strImplementationPlan = ConfigurationManager.AppSettings["ImplementationPlan"];
 
         private static ImplementationPlan implementationPlan = (ImplementationPlan)Enum.Parse(typeof(ImplementationPlan), strImplementationPlan);
@@ -33,6 +35,26 @@
 
         public static string XmlFilePath => xmlFilePath;
 
+        public static string CsvFilePath => csvFilePath;
+
         public static ImplementationPlan ImplementationPlan => implementationPlan;
+
+        public static string GetFilePathByFileType(FileType fileType)
+        {
+            string filePath = string.Empty;
+            switch (fileType)
+            {
+                case FileType.Text:
+                    filePath = GlobalConfig.TextFilePath;
+                    break;
+                case FileType.Xml:
+                    filePath = GlobalConfig.XmlFilePath;
+                    break;
+                case FileType.Csv:
+                    filePath = GlobalConfig.CsvFilePath;
+                    break;
+            }
+            return filePath;
+        }
     }
 }
