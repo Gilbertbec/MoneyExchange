@@ -7,6 +7,8 @@
 
     class ObjectsManageStateMachineByArray<T> : IObjectsManageStateMachine<T>
     {
+        private int SizeOfArray => GlobalConfig.SizeOfArray; 
+
         public int CurrentIndex { get; set; } = 0;
 
         public int CollectionCount => Collection.Count;
@@ -17,7 +19,7 @@
         {
             get
             {
-                T[] ts = new T[500];
+                T[] ts = new T[SizeOfArray];
                 Collection.CopyTo(ts, 0);
                 return ts[CurrentIndex];
             }
@@ -42,7 +44,7 @@
 
         public IObjectsManageStateMachine<T> Append(T t)
         {
-            T[] ts = new T[500];
+            T[] ts = new T[SizeOfArray];
             Collection.CopyTo(ts, 0);
             ts[CollectionCount] = t;
 
@@ -52,7 +54,7 @@
 
         public IObjectsManageStateMachine<T> Edit(int currentIndex, T t)
         {
-            T[] ts = new T[500];
+            T[] ts = new T[SizeOfArray];
             Collection.CopyTo(ts, 0);
             ts[currentIndex] = t;
 
@@ -62,11 +64,11 @@
 
         public IObjectsManageStateMachine<T> Delete(int currentIndex)
         {
-            T[] ts = new T[500];
+            T[] ts = new T[SizeOfArray];
             Collection.CopyTo(ts, 0);
             Array.Clear(ts, currentIndex, 1);
             ts = ts.Where(x => x != null).ToArray();
-            Array.Resize(ref ts, 500);
+            Array.Resize(ref ts, SizeOfArray);
             Collection = ts.Where(x => x != null).ToArray();
 
             CurrentIndex = currentIndex > 0 ? CurrentIndex -= 1 : CurrentIndex;

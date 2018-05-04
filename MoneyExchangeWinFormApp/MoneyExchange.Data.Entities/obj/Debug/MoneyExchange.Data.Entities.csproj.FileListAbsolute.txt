@@ -8,4 +8,3 @@ C:\Users\Gilbert\Documents\GitHub\MoneyExchange\MoneyExchangeWinFormApp\MoneyExc
 C:\Users\Gilbert\Documents\GitHub\MoneyExchange\MoneyExchangeWinFormApp\MoneyExchange.Data.Entities\obj\Debug\MoneyExchange.Data.Entities.csproj.CoreCompileInputs.cache
 C:\Users\Gilbert\Documents\GitHub\MoneyExchange\MoneyExchangeWinFormApp\MoneyExchange.Data.Entities\obj\Debug\MoneyExchange.Data.Entities.dll
 C:\Users\Gilbert\Documents\GitHub\MoneyExchange\MoneyExchangeWinFormApp\MoneyExchange.Data.Entities\obj\Debug\MoneyExchange.Data.Entities.pdb
-C:\Users\Gilbert\Documents\GitHub\MoneyExchange\MoneyExchangeWinFormApp\MoneyExchange.Data.Entities\obj\Debug\MoneyExchange.Data.Entities.csprojResolveAssemblyReference.cache

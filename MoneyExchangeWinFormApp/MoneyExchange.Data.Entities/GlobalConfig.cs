@@ -29,6 +29,8 @@
             implementationPlan = (ImplementationPlan)Enum.Parse(typeof(ImplementationPlan), strImplementationPlan);
         }
 
+        public static int SizeOfArray => 500;
+
         public static FileType FileType => fileType;
 
         public static string TextFilePath => textFilePath;

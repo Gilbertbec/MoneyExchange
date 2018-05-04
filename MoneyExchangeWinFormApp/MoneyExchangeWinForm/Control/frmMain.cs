@@ -6,7 +6,7 @@
 
     public partial class frmMain : Form
     {
-        public static R[] r = new R[500];
+        public static R[] r = new R[GlobalConfig.SizeOfArray];
 
         public frmMain()
         {
