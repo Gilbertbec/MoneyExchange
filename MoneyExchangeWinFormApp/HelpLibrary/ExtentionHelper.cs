@@ -37,7 +37,6 @@
                 errorProvider.SetError(textBox, null);
                 isValidated = true;
             }
-
             return isValidated;
         }
     }

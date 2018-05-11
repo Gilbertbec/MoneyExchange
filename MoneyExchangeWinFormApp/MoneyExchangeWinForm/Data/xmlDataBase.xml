@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Currencies>
+  <Currency CountryName="Argentina">
+    <CurrencyName>Argentine Peso</CurrencyName>
+    <Value>20.54249</Value>
+  </Currency>
+  <Currency CountryName="Australia">
+    <CurrencyName>Australian Dollar</CurrencyName>
+    <Value>1.325544</Value>
+  </Currency>
+  <Currency CountryName="Bahrain">
+    <CurrencyName>Bahraini Dinar</CurrencyName>
+    <Value>0.376</Value>
+  </Currency>
+  <Currency CountryName="Botswana">
+    <CurrencyName>Botswana Pula</CurrencyName>
+    <Value>9.813519</Value>
+  </Currency>
+  <Currency CountryName="Brazil">
+    <CurrencyName>Brazilian Real</CurrencyName>
+    <Value>3.475559</Value>
+  </Currency>
+  <Currency CountryName="United Kingdom">
+    <CurrencyName>British Pound</CurrencyName>
+    <Value>0.718245</Value>
+  </Currency>
+  <Currency CountryName="Brunei">
+    <CurrencyName>Bruneian Dollar</CurrencyName>
+    <Value>1.327119</Value>
+  </Currency>
+  <Currency CountryName="Bulgaria">
+    <CurrencyName>Bulgarian Lev</CurrencyName>
+    <Value>1.615566</Value>
+  </Currency>
+  <Currency CountryName="Canada">
+    <CurrencyName>Canadian Dollar</CurrencyName>
+    <Value>1.287841</Value>
+  </Currency>
+  <Currency CountryName="Chile">
+    <CurrencyName>Chilean Peso</CurrencyName>
+    <Value>602.874899</Value>
+  </Currency>
+  <Currency CountryName="China">
+    <CurrencyName>Chinese Yuan Renminbi</CurrencyName>
+    <Value>6.336577</Value>
+  </Currency>
+  <Currency CountryName="Colombia">
+    <CurrencyName>Colombian Peso</CurrencyName>
+    <Value>2814.99991</Value>
+  </Currency>
+  <Currency CountryName="Croatia">
+    <CurrencyName>Croatian Kuna</CurrencyName>
+    <Value>6.132067</Value>
+  </Currency>
+  <Currency CountryName="Czech Republic">
+    <CurrencyName>Czech Koruna</CurrencyName>
+    <Value>21.041152</Value>
+  </Currency>
+  <Currency CountryName="Denmark">
+    <CurrencyName>Danish Krone</CurrencyName>
+    <Value>6.15412</Value>
+  </Currency>
+  <Currency CountryName="United Arab Emirates">
+    <CurrencyName>Emirati Dirham</CurrencyName>
+    <Value>3.6725</Value>
+  </Currency>
+  <Currency CountryName="European union">
+    <CurrencyName>Euro</CurrencyName>
+    <Value>0.826026</Value>
+  </Currency>
+  <Currency CountryName="Hong Kong">
+    <CurrencyName>Hong Kong Dollar</CurrencyName>
+    <Value>7.847674</Value>
+  </Currency>
+  <Currency CountryName="Hungary">
+    <CurrencyName>Hungarian Forint</CurrencyName>
+    <Value>258.405112</Value>
+  </Currency>
+  <Currency CountryName="Iceland">
+    <CurrencyName>Icelandic Krona</CurrencyName>
+    <Value>101.43984</Value>
+  </Currency>
+  <Currency CountryName="India">
+    <CurrencyName>Indian Rupee</CurrencyName>
+    <Value>66.686083</Value>
+  </Currency>
+  <Currency CountryName="Indonesia">
+    <CurrencyName>Indonesian Rupiah</CurrencyName>
+    <Value>13884.80703</Value>
+  </Currency>
+  <Currency CountryName="Iran">
+    <CurrencyName>Iranian Rial</CurrencyName>
+    <Value>42025.29483</Value>
+  </Currency>
+  <Currency CountryName="Israel">
+    <CurrencyName>Israeli Shekel</CurrencyName>
+    <Value>3.592745</Value>
+  </Currency>
+  <Currency CountryName="Japan">
+    <CurrencyName>Japanese Yen</CurrencyName>
+    <Value>109.266917</Value>
+  </Currency>
+  <Currency CountryName="Kazakhstan">
+    <CurrencyName>Kazakhstani Tenge</CurrencyName>
+    <Value>327.685432</Value>
+  </Currency>
+  <Currency CountryName="Kuwait">
+    <CurrencyName>Kuwaiti Dinar</CurrencyName>
+    <Value>0.301819</Value>
+  </Currency>
+  <Currency CountryName="Libya">
+    <CurrencyName>Libyan Dinar</CurrencyName>
+    <Value>1.339394</Value>
+  </Currency>
+  <Currency CountryName="Malaysia">
+    <CurrencyName>Malaysian Ringgit</CurrencyName>
+    <Value>3.920231</Value>
+  </Currency>
+  <Currency CountryName="Mauritius">
+    <CurrencyName>Mauritian Rupee</CurrencyName>
+    <Value>34.386269</Value>
+  </Currency>
+  <Currency CountryName="Mexico">
+    <CurrencyName>Mexican Peso</CurrencyName>
+    <Value>18.770659</Value>
+  </Currency>
+  <Currency CountryName="Nepal">
+    <CurrencyName>Nepalese Rupee</CurrencyName>
+    <Value>107.197879</Value>
+  </Currency>
+  <Currency CountryName="New Zealand">
+    <CurrencyName>New Zealand Dollar</CurrencyName>
+    <Value>1.417396</Value>
+  </Currency>
+  <Currency CountryName="Norway">
+    <CurrencyName>Norwegian Krone</CurrencyName>
+    <Value>7.985319</Value>
+  </Currency>
+  <Currency CountryName="Oman">
+    <CurrencyName>Omani Rial</CurrencyName>
+    <Value>0.3845</Value>
+  </Currency>
+  <Currency CountryName="Pakistan">
+    <CurrencyName>Pakistani Rupee</CurrencyName>
+    <Value>115.926896</Value>
+  </Currency>
+  <Currency CountryName="Philippines">
+    <CurrencyName>Philippine Peso</CurrencyName>
+    <Value>51.943439</Value>
+  </Currency>
+  <Currency CountryName="Poland">
+    <CurrencyName>Polish Zloty</CurrencyName>
+    <Value>3.49287</Value>
+  </Currency>
+  <Currency CountryName="Qatar">
+    <CurrencyName>Qatari Riyal</CurrencyName>
+    <Value>3.64</Value>
+  </Currency>
+  <Currency CountryName="Romania">
+    <CurrencyName>Romanian New Leu</CurrencyName>
+    <Value>3.849169</Value>
+  </Currency>
+  <Currency CountryName="Russia">
+    <CurrencyName>Russian Ruble</CurrencyName>
+    <Value>62.683299</Value>
+  </Currency>
+  <Currency CountryName="Saudi Arabia">
+    <CurrencyName>Saudi Arabian Riyal</CurrencyName>
+    <Value>3.75</Value>
+  </Currency>
+  <Currency CountryName="Singapore">
+    <CurrencyName>Singapore Dollar</CurrencyName>
+    <Value>1.327119</Value>
+  </Currency>
+  <Currency CountryName="South Africa">
+    <CurrencyName>South African Rand</CurrencyName>
+    <Value>12.39721</Value>
+  </Currency>
+  <Currency CountryName="South Korea">
+    <CurrencyName>South Korean Won</CurrencyName>
+    <Value>1075.320952</Value>
+  </Currency>
+  <Currency CountryName="Sri Lanka">
+    <CurrencyName>Sri Lankan Rupee</CurrencyName>
+    <Value>157.39784</Value>
+  </Currency>
+  <Currency CountryName="Sweden">
+    <CurrencyName>Swedish Krona</CurrencyName>
+    <Value>8.663248</Value>
+  </Currency>
+  <Currency CountryName="Swiss">
+    <CurrencyName>Swiss Franc</CurrencyName>
+    <Value>0.989562</Value>
+  </Currency>
+  <Currency CountryName="Taiwan">
+    <CurrencyName>Taiwan New Dollar</CurrencyName>
+    <Value>29.652865</Value>
+  </Currency>
+  <Currency CountryName="Thailand">
+    <CurrencyName>Thai Baht</CurrencyName>
+    <Value>31.597671</Value>
+  </Currency>
+  <Currency CountryName="Trinidad">
+    <CurrencyName>Trinidadian Dollar</CurrencyName>
+    <Value>6.75731</Value>
+  </Currency>
+  <Currency CountryName="Turkey">
+    <CurrencyName>Turkish Lira</CurrencyName>
+    <Value>4.074657</Value>
+  </Currency>
+  <Currency CountryName="Venezuela">
+    <CurrencyName>Venezuelan Bolivar</CurrencyName>
+    <Value>9.9875</Value>
+  </Currency>
+</Currencies>

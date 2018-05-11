@@ -4,7 +4,6 @@
     using System;
     using System.Collections.Generic;
     using System.Reflection;
-    using System.Windows.Forms;
 
     public static class ReflactorHelper
     {
@@ -178,12 +177,6 @@
             type.GetMethod(methodName).Invoke(instance, null);
         }
 
-        //public static List<ExchangeRate> InvokeMethodValueByMethodNameWithParameter(string methodName, dynamic instance, string[] parameters)
-        //{
-        //    Type type = instance.GetType();
-        //    List<ExchangeRate> exchangeRateList = (List<ExchangeRate>)type.InvokeMember("methodName", BindingFlags.InvokeMethod, null, "methodName", parameters);
-        //    return exchangeRateList;
-        //}
         public static void InvokeMethodValueByMethodName(string methodName, string className, string assemblyName)
         {
             Assembly assembly = GetAssemblyByAssemblyName(assemblyName);
@@ -192,28 +185,6 @@
             type.GetMethod(methodName).Invoke(instance, null);
         }
 
-        //public static List<ExchangeRate> InvokeMethodValueByMethodNameWithParameter(string methodName, string className, string assemblyName, string[] parameters)
-        //{
-        //    //var methodInfo = GetAssemblyByAssemblyName(assemblyName).GetTypes().Where(x => x.Namespace.ToUpper().Contains("HELPLIBRARY"))
-        //    //.Select(t => t.GetMethod(methodName, System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public));
-        //    //var methodInfo = GetAssemblyByAssemblyName(assemblyName).GetTypes().Select(t => t.GetMethod(methodName, System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public));
-        //    var assembly = GetAssemblyByAssemblyName(assemblyName);
-        //    var types = assembly.GetTypes();                         
-        //    var types1 = types.Where(x => x.FullName == "HelpLibrary.ReflactorHelper");
-        //    var methodInfo = types1.Select(t => t.GetMethod(methodName, System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public));
-
-
-        //    List<ExchangeRate> exchangeRateList = null; 
-        //    methodInfo.ToList().ForEach(x =>
-        //    {
-        //        if (x != null)
-        //        {
-        //            exchangeRateList = (List<ExchangeRate>)x.Invoke(null, parameters);
-        //        }
-        //    });
-
-        //    return exchangeRateList;
-        //}
         public static MethodInfo GetPrivateMethodInfoByMethodName(string methodName, dynamic methodValue, object instance)
         {
             Type type = instance.GetType();
@@ -346,38 +317,5 @@
                 }
             }
         }
-
-        //public static ICollection<T> InvokeMethodValueByAttributeNameForExchangeRateList(string functionName, string conditionString, string className, string assemblyName)
-        //{
-        //    Assembly assembly = GetAssemblyByAssemblyName(assemblyName);
-
-        //    var classNames = assembly.GetTypes();
-        //    foreach (var item in classNames)
-        //    {
-        //        MessageBox.Show(item.Name);
-        //    }
-
-
-        //    var instance = GetInstenceByClassName(className, assembly);
-        //    Type type = instance.GetType();
-        //    MethodInfo[] methodInfo = type.GetMethods(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
-        //    ICollection<T> collection = null;
-        //    foreach (var method in methodInfo)
-        //    {
-        //        object[] attributes = method.GetCustomAttributes(typeof(ConditionAttribute), true);
-        //        foreach (var item in attributes)
-        //        {
-        //            ConditionAttribute attr = item as ConditionAttribute;
-        //            if (null != attr)
-        //            {
-        //                if (attr.FunctionName == functionName && attr.ConditionString == conditionString)
-        //                {
-        //                    collection = type.GetMethod(method.Name, BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public).Invoke(instance, null);
-        //                }
-        //            }
-        //        }
-        //    }
-        //    return collection;
-        //}
     }
 }

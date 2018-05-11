@@ -13,8 +13,8 @@
         public ICollection<T> GetExchangeRateFromFile()
         {
             FileType fileType = GlobalConfig.FileType;
-            string path = GlobalConfig.GetFilePathByFileType(fileType);
-            Collection = GetExchangeRateFromFile(fileType, path);
+            string filePath = GlobalConfig.GetFilePathByFileType(fileType);
+            Collection = GetExchangeRateFromFile(fileType, filePath);
             return Collection;
         }
 

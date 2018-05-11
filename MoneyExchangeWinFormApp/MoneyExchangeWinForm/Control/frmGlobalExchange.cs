@@ -28,24 +28,6 @@
             lblToSource.Text = string.Empty;
         }
 
-        void BindcboSelectCurrency()
-        {
-            if (Model.ExchangeRateList == null)
-            { return; }
-
-            ((List<R>)Model.ExchangeRateList).Insert(0, new R(",Select a Currency..,1"));
-            cboSelectCurrency.DataSource = Model.ExchangeRateList;
-            cboSelectCurrency.DisplayMember = "CurrencyName";
-            cboSelectCurrency.ValueMember = "Value";
-
-            R[] rs = new R[Model.ExchangeRateList.Count];
-            Array.Copy(((List<R>)Model.ExchangeRateList).ToArray(), rs, Model.ExchangeRateList.Count);
-
-            cboTargetCurrency.DataSource = rs;
-            cboTargetCurrency.DisplayMember = "CurrencyName";
-            cboTargetCurrency.ValueMember = "Value";
-        }
-
         private void btnExchange_Click(object sender, EventArgs e)
         {
             if (cboSelectCurrency.SelectedIndex == 0)
@@ -81,34 +63,6 @@
         private void btnReset_Click(object sender, EventArgs e)
         {
             RestetControls(this);
-        }
-
-        void RestetControls(Control control)
-        {
-            foreach (var item in control.Controls)
-            {
-                if (item is TextBox)
-                {
-                    ((TextBox)item).Clear();
-                }
-                else if (item is Label)
-                {
-                    if (((Label)item).Name != "lblTitle")
-                    {
-                        ((Label)item).Text = string.Empty;
-                    }
-                }
-                else if (item is ComboBox)
-                {
-                    if (((ComboBox)item).Items.Count == 0)
-                    { return; }
-                    ((ComboBox)item).SelectedIndex = 0;
-                }
-                else if (item is GroupBox)
-                {
-                    RestetControls((GroupBox)item);
-                }
-            }
         }
 
         private void btnQuit_Click(object sender, EventArgs e)
@@ -153,8 +107,54 @@
             var sourceRate = Model.SourceCurrencyRate;
             var targetRate = Model.TargetCurrencyRate;
 
-            lblFromSource.Text = string.Format($"1 {Model.SourceCurrency} = {Model.ReverseCurrencyRate} {Model.TargetCurrency}(s)"); 
+            lblFromSource.Text = string.Format($"1 {Model.SourceCurrency} = {Model.ReverseCurrencyRate} {Model.TargetCurrency}(s)");
             lblToSource.Text = string.Format($"1 {Model.TargetCurrency} = {Model.CurrencyRate} {Model.SourceCurrency}(s)");
+        }
+
+        void BindcboSelectCurrency()
+        {
+            if (Model.ExchangeRateList == null)
+            { return; }
+
+            ((List<R>)Model.ExchangeRateList).Insert(0, new R(",Select a Currency..,1"));
+            cboSelectCurrency.DataSource = Model.ExchangeRateList;
+            cboSelectCurrency.DisplayMember = "CurrencyName";
+            cboSelectCurrency.ValueMember = "Value";
+
+            R[] rs = new R[Model.ExchangeRateList.Count];
+            Array.Copy(((List<R>)Model.ExchangeRateList).ToArray(), rs, Model.ExchangeRateList.Count);
+
+            cboTargetCurrency.DataSource = rs;
+            cboTargetCurrency.DisplayMember = "CurrencyName";
+            cboTargetCurrency.ValueMember = "Value";
+        }
+
+        void RestetControls(Control control)
+        {
+            foreach (var item in control.Controls)
+            {
+                if (item is TextBox)
+                {
+                    ((TextBox)item).Clear();
+                }
+                else if (item is Label)
+                {
+                    if (((Label)item).Name != "lblTitle")
+                    {
+                        ((Label)item).Text = string.Empty;
+                    }
+                }
+                else if (item is ComboBox)
+                {
+                    if (((ComboBox)item).Items.Count == 0)
+                    { return; }
+                    ((ComboBox)item).SelectedIndex = 0;
+                }
+                else if (item is GroupBox)
+                {
+                    RestetControls((GroupBox)item);
+                }
+            }
         }
     }
 }
